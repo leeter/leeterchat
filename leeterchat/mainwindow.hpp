@@ -16,10 +16,13 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 #include <QMainWindow>
+#include <memory>
 
 namespace Ui {
 class MainWindow;
 }
+
+class NetworkList;
 
 class MainWindow : public QMainWindow
 {
@@ -31,9 +34,11 @@ public:
 
 private slots:
     void on_textInput_returnPressed();
+    void openNetworkList();
 
 private:
     Ui::MainWindow * ui;
+    std::unique_ptr<NetworkList> networkList;
 };
 
 #endif // MAINWINDOW_HPP

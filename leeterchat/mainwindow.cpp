@@ -17,6 +17,7 @@
 #include <QDateTime>
 #include "mainwindow.hpp"
 #include "ui_mainwindow.h"
+#include "networklist.hpp"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -53,4 +54,13 @@ void MainWindow::on_textInput_returnPressed()
     textOutput->setItem(targetRow, 2, text.release());
     textOutput->scrollToBottom();
     ui->textInput->clear();
+}
+
+void MainWindow::openNetworkList()
+{
+    if(!networkList)
+    {
+        networkList.reset(new NetworkList);
+    }
+    networkList->show();
 }
