@@ -9,10 +9,18 @@ QT       -= gui
 TARGET = libleeterchat
 TEMPLATE = lib
 CONFIG += staticlib
+CONFIG += c++11
 
-SOURCES += server.cpp
+SOURCES += server.cpp \
+    session.cpp \
+    user.cpp \
+    ircnetwork.cpp
 
-HEADERS += server.hpp
+HEADERS += server.hpp \
+    session.hpp \
+    user.hpp \
+    ircnetwork.hpp \
+    login_type.hpp
 unix {
     target.path = /usr/lib
     INSTALLS += target

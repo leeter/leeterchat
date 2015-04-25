@@ -13,6 +13,34 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#include "user.hpp"
+#ifndef IRCNETWORK_HPP
+#define IRCNETWORK_HPP
+
+#include <string>
+#include <vector>
+#include "login_type.hpp"
+namespace leeterchat {
 
 
+struct ircnetwork
+{
+    std::string friendlyName;
+    std::string nick;
+    std::string nick2;
+    std::string username;
+    std::string realname;
+    std::string password;
+    std::string comment;
+    std::string encoding;
+    std::vector<std::string> servers;
+    std::vector<std::string> commands;
+    std::vector<std::string> favorite_channels;
+    login_method logintype;
+
+public:
+    explicit ircnetwork(std::string friendlyName);
+};
+
+}
+
+#endif // IRCNETWORK_HPP

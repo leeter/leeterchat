@@ -19,10 +19,11 @@
 #include "ui_mainwindow.h"
 #include "networklist.hpp"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(std::vector<leeterchat::ircnetwork> &networks, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    networkList.reset(new NetworkList(networks, this));
     ui->setupUi(this);
 }
 
@@ -58,9 +59,5 @@ void MainWindow::on_textInput_returnPressed()
 
 void MainWindow::openNetworkList()
 {
-    if(!networkList)
-    {
-        networkList.reset(new NetworkList);
-    }
     networkList->show();
 }

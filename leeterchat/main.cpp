@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow w;
+    std::vector<leeterchat::ircnetwork> networks;
+    MainWindow w(networks);
     w.show();
 
     return a.exec();

@@ -17,6 +17,7 @@
 #define MAINWINDOW_HPP
 #include <QMainWindow>
 #include <memory>
+#include <ircnetwork.hpp>
 
 namespace Ui {
 class MainWindow;
@@ -29,7 +30,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(std::vector<leeterchat::ircnetwork> &networks, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:

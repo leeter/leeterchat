@@ -13,6 +13,23 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#include "user.hpp"
+#ifndef LOGIN_TYPE_HPP
+#define LOGIN_TYPE_HPP
 
+namespace leeterchat {
 
+enum class login_method
+{
+    PASS,
+    DEFAULT_REAL = login_method::PASS,
+    DEFAULT,
+    MSG_NICKSERV,
+    NICKSERV,
+    SASL,
+    CHALLENGEAUTH,
+    CUSTOM,
+    SASL_EXTERNAL
+};
+
+}
+#endif // LOGIN_TYPE_HPP
